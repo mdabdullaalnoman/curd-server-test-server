@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curd server</title>
+</head>
+<body>
+    <h1>curd server</h1>
+
+    <form action="/addService" method="POST">
+       <input type="text" placeholder="name" name="name" id=""> 
+       <input type="text" placeholder="price" name="price" id="">
+       <input type="text" placeholder="quantity" name="quantity" id=""><br>
+       <button type="submit">addService</button>
+    </form>
+
+    <div class="service">
+
+    </div>
+
+    <script>
+        fetch('http://localhost:5000/service')
+        .then(res => { res.json()})
+        .then(data => {
+            console.log(data);
+            // const container = document.getElementsByClassName('service');
+            // data.forEach(pd => {
+            //     const p = document.createElement('p');
+            //     p.innerHTML = `${pd.name} price: ${pd.price}`;
+            //     container.appendChild(p);
+            // })
+        });
+    </script>
+
+</body>
+</html>
